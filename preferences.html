@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="preferences.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id = "main">
+            <h1>Sign Up</h1>
+            <form class = "login">
+                <label for="fname" class="textLabel">First name:</label><br>
+                <input type="text" class="textBox" id="fname"><br>
+                <label for="lname" class="textLabel">Last name:</label><br>
+                <input type="text" class="textBox" id="lname"><br>
+                <label for="lname" class="textLabel">Email address:</label><br>
+                <input type="text" class="textBox" id="email"><br>
+                <label for="lname" class="textLabel">Password:</label><br>
+                <input type="text" class="textBox" id="pwd"><br>
+                <label for="lname" class="textLabel">Repeat password:</label><br>
+                <input type="text" class="textBox" id="pwd2"><br><br>
+            </form>
+           
+            <form class = "login" action="/action_page2.php">
+                <h2>Select your preferences</h2>
+                <input type="checkbox" id="vegetables">
+                <label for="vehicle1" class="checkBox">I eat vegetables</label>
+                <br>
+                <input type="checkbox" id="meat">
+                <label for="vehicle2" class="checkBox">I eat meat</label>
+                <br>
+                <input type="checkbox" id="dairy">
+                <label for="vehicle3" class="checkBox">I eat dairy</label>
+                <br>
+                
+            </form>
+            <!--
+            <form action="/action_page.php">
+                <label for="img">Upload profile image:</label>
+                <input type="file" id="img" accept="image/*"><br>
+                
+            </form>-->
+            <button id = "submit" type="submit">Sign Up</button>
+        </div>
+    </body>
+</html>
