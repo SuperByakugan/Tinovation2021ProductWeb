@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <div id="main">
+            <form id="login">
+            <h3>Account Login</h3>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="dyld@gmail.com" autofocus required></input>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input id="password" type="password" required></input>
+            </div>
+            <div>
+                <input id="remember-user" type="checkbox"></input>
+                <label for="remember-user" style="font-size: 12px;">Remember Me</label>
+            </div>
+            <button id="submit" onclick="submit()">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
