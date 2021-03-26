@@ -55,10 +55,10 @@ input:valid{
 input
 {
     width: 90%;
-    padding: 5px 0px 0px 5px;
     margin: 3px 10px 3px 10px;
     font-size: 16px;
     border-width: 2px;
+    font-family: Raleway, "Alegreya", Helvetica;
     display: inline-block;
 }
 
@@ -70,6 +70,7 @@ input
 
 #submit
 {
+    font-family: Raleway, "Alegreya", Helvetica;
     background-color: #32a866;
     width: 100%;
     color: white;
@@ -84,5 +85,5 @@ body
 {
     padding: 0px;
     margin: 0px;
-    font-family: "Alegreya", Helvetica;
+    font-family: Raleway, "Alegreya", Helvetica;
 }
