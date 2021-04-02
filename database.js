@@ -1,15 +1,16 @@
 var user;
 var uid;
 
-
+//adds items to their list by getting the item from a field and quantity from a field and adding it
+//in the format of item: quantity in the JSON so quantities can be accesses using the item name
 async function addItem() {
 	//item is the name of the item and quantity is how much of the item
-	//change the ids to what the text fields actually are
+	//TODO: CHANGE THE IDS TO WHAT THE TEXT FIELDS ACTUALLY ARE
     const item = {
         document.getElementById("item").value: document.getElementById("quantity").value
     };
 	
-	//not sure what url should be so will figure that out, shud be the id + '/' + uid
+	//TODO: NOT SURE WHAT URL SHOULD BE SO WILL FIGURE THAT OUT, SHUD BE THE ID + '/' + UID
     const res = await fetch('url', {
         method: 'POST',
         headers: {
@@ -28,19 +29,30 @@ async function addItem() {
     }
 }
 
-
+//fetches the corresponding quantity value stored in the JSON
+//TODO: note sure what it will return if the itemName doesnt exist in the JSON, so make it return 0 if it isnt
 async function getItemQuantity(itemName) {
-	//add in url later and should have + '/' + uid
+	//TODO: ADD IN URL LATER AND SHOULD HAVE + '/' + UID
     const res = await fetch('url');
     if (res.ok) {
-		//json will be a list of all the items, which will have 
+		//json will be a list of all the items, which will have quantity when grabbing item
         let json = await res.json();
         console.log(json);
 		return json.itemName;
-        //document.getElementById("recipe-title").innerHTML = json.date;
     } else {
-        //document.getElementById("recipe-title").innerHTML = "Error occurred while trying to fetch recipe!";
+        alert('An error occurred while trying to fetch your recipe');
     }
 }
 
 
+//onclick methods for getting quantities
+//TODO: ADD WHEN HAVE FRONT END LAYOUT
+/* format should be
+
+function click(){
+	itemName = document.getElementById("FIELD").value;
+	quantity = getItemQuantity(itemName);
+	document.getElementById("FIELD 2").value = quantity
+}
+
+*/
