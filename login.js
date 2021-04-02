@@ -4,7 +4,7 @@ var signedUp = false;
 
 function submitRegister(){
   
-    var email = document.getElementById("email").value; // not done
+    var email = document.getElementById("email").value; 
     var password1 = document.getElementById("pwd").value; 
     var password2 = document.getElementById("pwd2").value;
   if(password1 != password2){
@@ -37,6 +37,7 @@ function submit(){
     // Signed in
     user = userCredential.user;
     console.log(user);
+    
     // ...
   })
   .catch((error) => {
@@ -52,13 +53,16 @@ firebase.auth().onAuthStateChanged((user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     var uid = user.uid;
     console.log(uid);
+   
     if(signedUp){
         var firstName = document.getElementById("fname").value;
         var lastName = document.getElementById("lname").value;
-        var vegetables = document.getElementById("vegetables").value;
-        var meat = document.getElementById("meat").value;
-        var dairy = document.getElementById("dairy").value;
-        writeUserData(uid, firstName, lastName, vegetables, meat, dairy);
+        var vegetables = document.getElementById("vegetables").checked;
+        var meat = document.getElementById("meat").checked;
+        var dairy = document.getElementById("dairy").checked;
+        let email = document.getElementById("email").value; 
+        let password = document.getElementById("pwd").value; 
+        writeUserData(uid, firstName, lastName, vegetables, meat, dairy, email, password);
         
     }
     // ...
@@ -78,12 +82,14 @@ function logOut(){
     });
 }
 
-function writeUserData(userId, firstName, lastName, vegetables, meat, dairy) {
+function writeUserData(userId, firstName, lastName, vegetables, meat, dairy, email, password) {
   firebase.database().ref('users/' + userId).set({
     firstName: firstName,
     lastName: lastName,
     vegetables: vegetables,
     meat: meat,
-    dairy: dairy
+    dairy: dairy,
+    email: email,
+    password: password
   });
 }
