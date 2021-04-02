@@ -8,10 +8,10 @@
 
 .login
 {
-    padding: 10px 10px 40px 10px;
+    padding: 10px 10px 20px 10px;
     /*background-color: aliceblue;*/
     margin: auto;
-    width: 50%;
+    width: 30%;
     height: auto;
     border-radius: 15px;
 }
@@ -32,7 +32,7 @@ h1,h3
 
 .textBox
 {
-    width: 65%;
+    width: 90%;
 }
 
 
@@ -59,8 +59,7 @@ input
     border: 1px;
     font-size: 16px;
     padding: 10px 20px 10px 20px;
-    margin-left: 45%;
-    
+    margin-left:46%;
 }
 
 body

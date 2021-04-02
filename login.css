@@ -3,13 +3,18 @@
     width: 100%;
     height: 100vh;
     padding-top: 100px;
-    background-image: url(https://cdn.discordapp.com/emojis/748603198645862520.png?v=1);
+    /* background-image: url(https://cdn.discordapp.com/emojis/748603198645862520.png?v=1); */
+}
+
+.inputs
+{
+    margin-left: 10%;
 }
 
 #login
 {
     padding: 10px 50px 40px 50px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     margin: auto;
     width: 40%;
     height: auto;
@@ -20,7 +25,7 @@ label
 {
     width: 150px;
     padding: 5px 0px 0px 5px;
-    margin: 5px 10px 10px 5px;
+    margin: 5px 10px 10px 0px;
     font-size: 16px;
     display: inline-block;
 }
@@ -54,8 +59,8 @@ input:valid{
 
 input
 {
-    width: 90%;
-    margin: 3px 10px 3px 10px;
+    width: 80%;
+    margin: 3px 0px 3px 0px;
     font-size: 16px;
     border-width: 2px;
     font-family: Raleway, "Alegreya", Helvetica;
@@ -72,12 +77,13 @@ input
 {
     font-family: Raleway, "Alegreya", Helvetica;
     background-color: #32a866;
-    width: 100%;
+    width: 90%;
     color: white;
     border-radius: 5px;
     border: 1px;
     font-size: 16px;
     padding: 10px 20px 10px 20px;
+    margin-left: 5%;
     
 }
 
