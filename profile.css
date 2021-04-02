@@ -1,0 +1,46 @@
+#update{
+    background-color: greenyellow;
+    border: 2px solid black;
+    float: right;
+    display: block;
+}
+#information{
+    float: right;
+    align-items: right;
+    position: relative;
+    display: block;
+    grid-column-start: 12;
+}
+
+#pfp{
+    max-width: 300px; 
+}
+#imgDisplay{
+    display: grid;
+    float: left;
+}
+.imgDetails{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#starredList{
+    display: block;
+    clear: left;
+    position: absolute;
+    bottom: 20%;
+}
+table, td, th{
+    border: 1px solid black;
+}
+body{
+    background-color: lightblue;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    row-gap: auto;
+    column-gap: auto;
+    display: grid;
+}
+.grid{
+    border: 1px solid black;
+}
