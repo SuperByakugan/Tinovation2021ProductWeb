@@ -1,0 +1,31 @@
+.content {
+    padding: 3%;
+}
+
+h1 {
+    color: rgb(65, 65, 65)
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+
+.recipe {
+    border-radius: 10px;
+    background: rgb(231, 231, 231) !important;
+    width: 680px;
+    padding: 2%;
+  }
+  
+  .recipe-outline {
+      padding-top: 2% !important;
+  }
+  
+  .recipe-image {
+      padding-bottom: 3%;
+  }

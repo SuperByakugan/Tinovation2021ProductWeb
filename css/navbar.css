@@ -1,0 +1,39 @@
+.navbar-title {
+    font-size: 36px !important;
+    color: #ff7675;
+    padding-top: 0% !important;
+}
+
+.navbar-title:hover {
+    color: #ec6e6e;
+}
+
+.navbar-item {
+    color: #5e6566 !important;
+    font-size: 20px !important;
+}
+
+.active {
+    color: #eb4d4b !important;
+}
+
+.nav-link:hover {
+    color: #ec6e6e !important;
+}
+
+.create-recipe-btn {
+    background-color: #e74c3c !important;
+}
+
+.create-recipe-btn-text {
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.nav-item {
+    padding-top: 1% !important;
+}
+
+.col-padding {
+    padding-left: 3% !important;
+}
