@@ -41,3 +41,30 @@ table, td, th{
 .grid{
     border: 1px solid black;
 }
+
+.avatar {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.username {
+    padding-top: 10px;
+}
+
+.profile-info {
+    padding-top: 20px;
+}
+
+.my-recipes-title {
+    padding-top: 10px;
+}
+
+.edit-profile-btn {
+    background-color: #ff8686 !important;
+}
+
+.edit-profile-btn-text {
+    color: white !important;
+    font-size: 15px !important;
+}

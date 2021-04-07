@@ -18,6 +18,8 @@ h1
 .contentContainer
 {
     padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 40px;
     width: 100%!important;
 }
 
@@ -46,13 +48,17 @@ body {
     width: 100%;
     padding: 2%;
     margin-right: 10px;
-  }
+}
   
-  .recipe-outline {
-      padding-top: 2% !important;
-  }
+.recipe-outline {
+    padding-top: 2% !important;
+}
   
-  .recipe-image {
-      padding-bottom: 3%;
-      width: 100%;
-  }
+.recipe-image {
+    padding-bottom: 3%;
+    width: 100%;
+}
+
+hr {
+    max-width: 680px;
+}
