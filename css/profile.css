@@ -4,12 +4,12 @@
     display: block;
 }
 
-#information{
-    align-items: right;
-    position: relative;
-    display: block;
-    grid-column-start: 12;
-    border: 0px!important;
+.flexing
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: left;
 }
 
 #pfp{

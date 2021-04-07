@@ -28,12 +28,12 @@
             let divContainer = document.getElementById("information");
             for(let i = 0; i < 6; i++){
                 let informationUpdates = document.createElement("textarea");
-                informationUpdates.classList.add("profileObject");
+                /*informationUpdates.classList.add("profileObject");
                 informationUpdates.style.position = "relative";
                 informationUpdates.style.display = "block";
                 informationUpdates.style.alignItems = "center";
                 informationUpdates.style.marginLeft = "auto";
-                informationUpdates.style.marginRight = "auto";
+                informationUpdates.style.marginRight = "auto";*/
                 if(i < 3){
                     let idValue;
                     let insideHTML;
@@ -53,15 +53,6 @@
                 }else{
                     let informationDisplay = document.createElement("P");
                     informationDisplay.classList.add("infoDisplay");
-                    let insideHTML;
-                    if(i == 3){
-                        insideHTML = "Set Username";
-                    }else if(i === 4){
-                        insideHTML = "Other Info";
-                    }else{
-                        insideHTML = "Other Info";
-                    }
-                    informationDisplay.innerHTML = insideHTML;
                     divContainer.appendChild(informationDisplay);
                 }
             }
@@ -69,5 +60,5 @@
             document.getElementById("update").innerHTML = "Update Profile";
             document.getElementById("update").style.float = "none";
             divContainer.appendChild(document.getElementById("update"));
-            document.body.appendChild(divContainer);
+            document.getElementById("contentContainer").appendChild(divContainer);
         }
