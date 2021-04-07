@@ -1,5 +1,29 @@
+h1
+{
+    font-size: 36px!important;
+    padding-top: 5px;
+}
+
+.totalContainer
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBar
+{
+    padding: 20px;
+}
+
+.contentContainer
+{
+    padding-top: 20px;
+    width: 100%!important;
+}
+
 .content {
     padding: 3%;
+    margin: 0px!important;
 }
 
 h1 {
@@ -18,8 +42,10 @@ body {
 .recipe {
     border-radius: 10px;
     background: rgb(231, 231, 231) !important;
-    width: 680px;
+    max-width: 680px;
+    width: 100%;
     padding: 2%;
+    margin-right: 10px;
   }
   
   .recipe-outline {
@@ -28,4 +54,5 @@ body {
   
   .recipe-image {
       padding-bottom: 3%;
+      width: 100%;
   }

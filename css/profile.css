@@ -1,16 +1,15 @@
 #update{
     background-color: greenyellow;
     border: 2px solid black;
-    float: right;
     display: block;
 }
 
 #information{
-    float: right;
     align-items: right;
     position: relative;
     display: block;
     grid-column-start: 12;
+    border: 0px!important;
 }
 
 #pfp{
