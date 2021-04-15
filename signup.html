@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link href="./css/signup.css" rel="stylesheet" type="text/css" />
 
-<head>
-    <link href="./css/signup.css" rel="stylesheet" type="text/css" />
-
-    <script src="https://kit.fontawesome.com/299e4b8f4c.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div id="main">
-        <h1>Sign Up</h1>
-        <form class="login">
-            <label for="fname" class="textLabel">First name:</label><br>
-            <input type="text" class="textBox" id="fname"><br>
-            <label for="lname" class="textLabel">Last name:</label><br>
-            <input type="text" class="textBox" id="lname"><br>
-            <label for="lname" class="textLabel">Email address:</label><br>
-            <input type="text" class="textBox" id="email"><br>
-            <label for="lname" class="textLabel">Password:</label><br>
-            <input type="text" class="textBox" id="pwd"><br>
-            <label for="lname" class="textLabel">Repeat password:</label><br>
-            <input type="text" class="textBox" id="pwd2"><br><br>
+        <script src="https://kit.fontawesome.com/299e4b8f4c.js" crossorigin="anonymous"></script></head>
+    <body>
+        <div id = "main">
+            <form class = "login">
+            <h1>Sign Up</h1>
+            <div class = "page">
+                    <label for="fname" class="textLabel">First name:</label><br>
+                    <input type="text" class="textBox" id="fname"><br>
+                    <label for="lname" class="textLabel">Last name:</label><br>
+                    <input type="text" class="textBox" id="lname"><br>
+                    <label for="lname" class="textLabel">Email address:</label><br>
+                    <input type="text" class="textBox" id="email"><br>
+                    <label for="lname" class="textLabel">Password:</label><br>
+                    <input type="text" class="textBox" id="pwd"><br>
+                    <label for="lname" class="textLabel">Repeat password:</label><br>
+                    <input type="text" class="textBox" id="pwd2"><br><br>
+            </div>
+            <div class = "page">
+                    <h2>Select your preferences</h2>
+                    <input type="checkbox" id="vegetables">
+                    <label for="vehicle1" class="checkBox">I eat vegetables</label>
+                    <br>
+                    <input type="checkbox" id="meat">
+                    <label for="vehicle2" class="checkBox">I eat meat</label>
+                    <br>
+                    <input type="checkbox" id="dairy">
+                    <label for="vehicle3" class="checkBox">I eat dairy</label>
+                    <br>
+            </div>
+            <div style="overflow:none;">
+                <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+            <p></p>
+            <button id = "submit" onclick="submitRegister()">Sign Up</button>
         </form>
-
-        <form class="login" action="/action_page2.php">
-            <h2>Select your preferences</h2>
-            <input type="checkbox" id="vegetables">
-            <label for="vehicle1" class="checkBox">I eat vegetables</label>
-            <br>
-            <input type="checkbox" id="meat">
-            <label for="vehicle2" class="checkBox">I eat meat</label>
-            <br>
-            <input type="checkbox" id="dairy">
-            <label for="vehicle3" class="checkBox">I eat dairy</label>
-            <br>
-        </form>
-        <!--
+            <!--
             <form action="/action_page.php">
                 <label for="img">Upload profile image:</label>
                 <input type="file" id="img" accept="image/*"><br>
                 
             </form>-->
 
-        <button id="submit" onclick="submitRegister()">Sign Up</button>
+            
 
 
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
     <script>
@@ -67,7 +73,6 @@
 
     </script>
 
-    <script src="preferences.js"></script>
-</body>
-
+        <script src = "signup.js"></script>
+    </body>
 </html>
