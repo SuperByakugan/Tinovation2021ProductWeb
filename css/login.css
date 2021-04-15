@@ -9,6 +9,7 @@
 .inputs
 {
     margin-left: 10%;
+    margin-right: 10%;
 }
 
 #login
@@ -30,7 +31,7 @@ label
     display: inline-block;
 }
 
-h3
+h2
 {
     text-align: center;
 }
@@ -43,7 +44,6 @@ h3
 
 input:focus
 {
-    border-color: blue;
     transform:scale(1.01, 1.01);
     transition: all 0.4s;
 }
@@ -59,11 +59,11 @@ input:valid{
 
 input
 {
-    width: 80%;
-    margin: 3px 0px 3px 0px;
+    width: 90%;
+    margin: 5px 7px 5px 7px;
     font-size: 16px;
     border-width: 2px;
-    font-family: Raleway, "Alegreya", Helvetica;
+    font-family: Calibri;
     display: inline-block;
 }
 
@@ -75,7 +75,7 @@ input
 
 #submit
 {
-    font-family: Raleway, "Alegreya", Helvetica;
+    font-family: Calibri;
     background-color: #32a866;
     width: 90%;
     color: white;
@@ -91,5 +91,5 @@ body
 {
     padding: 0px;
     margin: 0px;
-    font-family: Raleway, "Alegreya", Helvetica;
+    font-family: Calibri;
 }
