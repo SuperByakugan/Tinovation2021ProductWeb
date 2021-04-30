@@ -14,6 +14,8 @@
     width: 30%;
     height: auto;
     border-radius: 15px;
+    display:flex;
+    flex-direction: column;
 }
 
 label
@@ -25,7 +27,7 @@ label
     display: inline-block;
 }
 
-h1,h3
+h1,h2,h3
 {
     text-align: center;
 }
@@ -35,14 +37,27 @@ h1,h3
     width: 90%;
 }
 
-
-
 input
 {
-    padding: 5px 0px 0px 5px;
+    font-family: Calibri;
     margin: 5px 10px 5px 10px;
     font-size: 16px;
     display: inline-block;
+}
+
+input:focus
+{
+    transform:scale(1.01, 1.01);
+    transition: all 0.4s;
+}
+
+input:invalid:focus
+{
+    border-color: red;
+}
+
+input:valid{
+    border-color: green;
 }
 
 #submit:hover
@@ -53,18 +68,23 @@ input
 
 #submit
 {
+    font-family: Calibri;
     background-color: #32a866;
     color: white;
     border-radius: 5px;
     border: 1px;
     font-size: 16px;
     padding: 10px 20px 10px 20px;
-    margin-left:46%;
+    justify-self: center;
 }
 
 body
 {
     padding: 0px;
     margin: 0px;
-    font-family: "Alegreya", Helvetica;
+    font-family: Calibri;
+}
+
+.page {
+    display:none;
 }
