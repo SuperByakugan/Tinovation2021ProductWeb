@@ -68,7 +68,9 @@
         </div>
         <div class="contentContainer alignContents border-start">
             <div>
-                <h1>Inventory</h1>
+                <h1 style="display:block">Inventory</h1>
+                <button onclick="invOut()">Add Items</button>
+                <button onclick="adderOut()">Inventory</button>
             </div>
             <div id="Adder" class="grid-container">
                 <div class="box" id="notch">
@@ -120,7 +122,6 @@
                     <p id="box2">5</p>
                 </div>    
             </div>
-            <button onclick="changeView()">Change View</button>
         </div>
     </div>
 
@@ -128,16 +129,15 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
-        function changeView(){
-            if(document.getElementById("Adder").style.display == "none"){
-                document.getElementById("Adder").style.display = "flex";
-                document.getElementById("SeeItems").style.display = "none";
-                document.getElementById("submittors").style.display = "block";
-            }else{
-                document.getElementById("Adder").style.display = "none";
-                document.getElementById("SeeItems").style.display = "flex";   
-                document.getElementById("submittors").style.display = "none"; 
-            }
+        function adderOut(){
+            document.getElementById("Adder").style.display = "none";
+            document.getElementById("SeeItems").style.display = "flex";   
+            document.getElementById("submittors").style.display = "none";     
+        }
+        function invOut(){
+            document.getElementById("Adder").style.display = "flex";
+            document.getElementById("SeeItems").style.display = "none";
+            document.getElementById("submittors").style.display = "block";    
         }
     </script>
 </body>
