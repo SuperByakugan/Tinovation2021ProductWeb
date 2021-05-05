@@ -69,8 +69,8 @@
         <div class="contentContainer alignContents border-start">
             <div>
                 <h1 style="display:block">Inventory</h1>
-                <button onclick="invOut()">Add Items</button>
-                <button onclick="adderOut()">Inventory</button>
+                <button onclick="invOut();" type = "button" class="btn btn-primary" id="addButton">Add Items</button>
+                <button onclick="adderOut()" type = "button" class = "btn btn-secondary" id="invButton">Inventory</button>
             </div>
             <div id="Adder" class="grid-container">
                 <div class="box" id="notch">
@@ -130,14 +130,20 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript">
         function adderOut(){
-            document.getElementById("Adder").style.display = "none";
-            document.getElementById("SeeItems").style.display = "flex";   
-            document.getElementById("submittors").style.display = "none";     
+            document.getElementById('Adder').style.display = 'none';
+            document.getElementById('SeeItems').style.display = 'flex';   
+            document.getElementById('submittors').style.display = 'none'; 
+            document.getElementById('addButton').class = 'btn btn-secondary';
+            document.getElementById('invButton').class = 'btn btn-primary'; 
+            console.log('add class: ' + document.getElementById('addButton').class);
         }
         function invOut(){
-            document.getElementById("Adder").style.display = "flex";
-            document.getElementById("SeeItems").style.display = "none";
-            document.getElementById("submittors").style.display = "block";    
+            document.getElementById('Adder').style.display = 'flex';
+            document.getElementById('SeeItems').style.display = 'none';
+            document.getElementById('submittors').style.display = 'block';    
+            document.getElementById('invButton').className = 'btn btn-secondary';
+            document.getElementById('addButton').className = 'btn btn-primary'; 
+            console.log('add class: ' + document.getElementById('addButton').class);
         }
     </script>
 </body>
