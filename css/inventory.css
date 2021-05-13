@@ -39,6 +39,7 @@
     height:auto;
     width:auto;
 }
-.input{
-    display:block
+.label {
+    display:block;
+    clear:both;
 }
