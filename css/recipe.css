@@ -1,11 +1,14 @@
 #title
 {
     font-family: Calibri;
+    font-size: 24px;
 }
 
-.content-container
+.ingredients-img-container
 {
-    display: block;
+    display: flex;
+    justify-self: space-between;
+    width: 100%;
 }
 
 .ingredients
@@ -32,7 +35,7 @@
     font-family: Calibri;
 }
 
-html{
+body{
     margin: 0px;
     padding: 0px;
 }
