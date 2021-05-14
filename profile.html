@@ -69,12 +69,15 @@
         </div>
         <div class="contentContainer border-start">
             <h1>Profile</h1>
-            <div class="profile-info">
-                <img src="./res/images/avatar.png" class="avatar">
-                <h3 class="username">John Doe</h3>
-                <a href="edit-profile.html"> <button type="button" class="btn edit-profile-btn edit-profile-btn-text">
+            <div class="profile-info" id = "profileContent">
+                <img src="./res/images/avatar.png" class="avatar" id = "pfp">
+                <h3 id = "user" class="username">John Doe</h3>
+                <!--<a href="edit-profile.html"> <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text">
                         <i class="fas fa-edit"></i>
-                        Edit Profile</button></a>
+                        Edit Profile</button></a>-->
+                <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text" onclick="updateInfo()">
+                    <i class="fas fa-edit"></i>
+                    Edit Profile</button>
             </div>
             <hr>
             <h3 class="my-recipes-title">My Recipes</h3>
