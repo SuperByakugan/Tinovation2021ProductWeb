@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="preferences.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <div id = "main">
-            <h1>Sign Up</h1>
-            <form class = "login">
-                <label for="fname" class="textLabel">First name:</label><br>
-                <input type="text" class="textBox" id="fname"><br>
-                <label for="lname" class="textLabel">Last name:</label><br>
-                <input type="text" class="textBox" id="lname"><br>
-                <label for="lname" class="textLabel">Email address:</label><br>
-                <input type="text" class="textBox" id="email"><br>
-                <label for="lname" class="textLabel">Password:</label><br>
-                <input type="text" class="textBox" id="pwd"><br>
-                <label for="lname" class="textLabel">Repeat password:</label><br>
-                <input type="text" class="textBox" id="pwd2"><br><br>
-            </form>
-           
-            <form class = "login" action="/action_page2.php">
-                <h2>Select your preferences</h2>
-                <input type="checkbox" id="vegetables">
-                <label for="vehicle1" class="checkBox">I eat vegetables</label>
-                <br>
-                <input type="checkbox" id="meat">
-                <label for="vehicle2" class="checkBox">I eat meat</label>
-                <br>
-                <input type="checkbox" id="dairy">
-                <label for="vehicle3" class="checkBox">I eat dairy</label>
-                <br>
-            </form>
-            <!--
+
+<head>
+    <link href="preferences.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="main">
+        <h1>Sign Up</h1>
+        <form class="login">
+            <label for="fname" class="textLabel">First name:</label><br>
+            <input type="text" class="textBox" id="fname"><br>
+            <label for="lname" class="textLabel">Last name:</label><br>
+            <input type="text" class="textBox" id="lname"><br>
+            <label for="lname" class="textLabel">Email address:</label><br>
+            <input type="text" class="textBox" id="email"><br>
+            <label for="lname" class="textLabel">Password:</label><br>
+            <input type="text" class="textBox" id="pwd"><br>
+            <label for="lname" class="textLabel">Repeat password:</label><br>
+            <input type="text" class="textBox" id="pwd2"><br><br>
+        </form>
+
+        <form class="login" action="/action_page2.php">
+            <h2>Select your preferences</h2>
+            <input type="checkbox" id="vegetables">
+            <label for="vehicle1" class="checkBox">I eat vegetables</label>
+            <br>
+            <input type="checkbox" id="meat">
+            <label for="vehicle2" class="checkBox">I eat meat</label>
+            <br>
+            <input type="checkbox" id="dairy">
+            <label for="vehicle3" class="checkBox">I eat dairy</label>
+            <br>
+        </form>
+        <!--
             <form action="/action_page.php">
                 <label for="img">Upload profile image:</label>
                 <input type="file" id="img" accept="image/*"><br>
                 
             </form>-->
 
-            <button id = "submit" onclick="submitRegister()">Sign Up</button>
+        <button id="submit" onclick="signUp()">Sign Up</button>
 
 
-        </div>
-        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-        
-        <script>
-          // Your web app's Firebase configuration
-          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-          var firebaseConfig = {
-    apiKey: "AIzaSyAOhubNd3ZQZ7IIWR2W8JdXKsvdsoZ4XIA",
-    authDomain: "dyld-52976.firebaseapp.com",
-    databaseURL: "https://dyld-52976-default-rtdb.firebaseio.com",
-    projectId: "dyld-52976",
-    storageBucket: "dyld-52976.appspot.com",
-    messagingSenderId: "909155949224",
-    appId: "1:909155949224:web:c0ed6cffce6f3e41ec009d",
-    measurementId: "G-BCQ7MBXFX3"
-  };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
-        </script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAOhubNd3ZQZ7IIWR2W8JdXKsvdsoZ4XIA",
+            authDomain: "dyld-52976.firebaseapp.com",
+            databaseURL: "https://dyld-52976-default-rtdb.firebaseio.com",
+            projectId: "dyld-52976",
+            storageBucket: "dyld-52976.appspot.com",
+            messagingSenderId: "909155949224",
+            appId: "1:909155949224:web:c0ed6cffce6f3e41ec009d",
+            measurementId: "G-BCQ7MBXFX3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-        <script src = "preferences.js"></script>
-    </body>
+    </script>
+
+    <script src="preferences.js"></script>
+</body>
+
 </html>
