@@ -1,6 +1,13 @@
 var user;
 var uid;
 
+async function getToken() {
+    if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+    
+}
+
 //adds items to their list by getting the item from a field and quantity from a field and adding it
 //in the format of item: quantity in the JSON so quantities can be accesses using the item name
 async function addItem() {
