@@ -2,13 +2,27 @@
 {
     font-family: Calibri;
     font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-thickness: 2px;
 }
 
-.ingredients-img-container
+.content
 {
     display: flex;
-    justify-self: space-between;
     width: 100%;
+    justify-self: flex-start;
+    align-items: center;
+}
+
+.text-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: auto;
+    border: 0px;
 }
 
 .ingredients
@@ -38,4 +52,9 @@
 body{
     margin: 0px;
     padding: 0px;
+}
+
+.recipe-image
+{
+    border-radius: 5px;
 }
