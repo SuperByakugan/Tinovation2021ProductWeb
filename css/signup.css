@@ -45,13 +45,13 @@ input
     display: inline-block;
 }
 
-#submit:hover
+#signup-button:hover
 {
     background-color: #2d945a;
     cursor: pointer;
 }
 
-#submit
+#signup-button
 {
     background-color: #32a866;
     color: white;
