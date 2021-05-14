@@ -5,6 +5,10 @@ function showTab(n) {
     // This function will display the specified tab of the form ...
     var x = document.getElementsByClassName("page");
     x[n].style.display = "block";
+    // Remove all other displays that are not n
+    for (let i = 0; i < x.length; i++) {
+        if (i != n) x[i].style.display = "none";
+    }
     // ... and fix the Previous/Next buttons:
     if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
