@@ -14,6 +14,8 @@ function signUp() {
         console.log(userCredential);
         user = userCredential.user;
         signedUp = true;
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
       })
       .catch((error) => {
         var errorMessage = error.message;
@@ -29,6 +31,8 @@ function logIn() {
     .then((userCredential) => {
       user = userCredential.user;
       console.log(user);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
     })
     .catch((error) => {
       var errorMessage = error.message;
@@ -61,7 +65,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 function logOut() {
   firebase.auth().signOut().then(() => {
-
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
   }).catch((error) => {
 
   });
