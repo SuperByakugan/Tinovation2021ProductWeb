@@ -9,16 +9,16 @@
             <form class = "login">
             <h1>Sign Up</h1>
             <div class = "page">
-                    <label for="fname" class="textLabel">First name:</label><br>
-                    <input type="text" class="textBox" id="fname"><br>
-                    <label for="lname" class="textLabel">Last name:</label><br>
-                    <input type="text" class="textBox" id="lname"><br>
-                    <label for="lname" class="textLabel">Email address:</label><br>
-                    <input type="text" class="textBox" id="email"><br>
-                    <label for="lname" class="textLabel">Password:</label><br>
-                    <input type="text" class="textBox" id="pwd"><br>
-                    <label for="lname" class="textLabel">Repeat password:</label><br>
-                    <input type="text" class="textBox" id="pwd2"><br><br>
+                    <label for="fname" class="textLabel">First name:</label>
+                    <div class="container"><input type="text" class="textBox" id="fname" required></div><br>
+                    <label for="lname" class="textLabel">Last name:</label>
+                    <div class="container"><input type="text" class="textBox" id="lname" required></div><br>
+                    <label for="lname" class="textLabel">Email address:</label>
+                    <div class="container"><input type="email" class="textBox" id="email" required></div><br>
+                    <label for="lname" class="textLabel">Password:</label>
+                    <div class="container"><input type="password" class="textBox" id="pwd" required></div><br>
+                    <label for="lname" class="textLabel">Repeat password:</label>
+                    <div class="container"><input type="password" class="textBox" id="pwd2" required></div><br><br>
             </div>
             <div class = "page">
                     <h2>Select your preferences</h2>
@@ -73,6 +73,6 @@
 
     </script>
 
-        <script src = "signup.js"></script>
+        <script src = "./javascript/signup.js"></script>
     </body>
 </html>
