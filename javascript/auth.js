@@ -11,8 +11,7 @@ function signUp() {
     console.log(`Email: ${email}\nPassword: ${password}`);
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        const token = getToken();
-        localStorage.setItem("token", token);
+        const token = getToken(password);
 
         user = userCredential.user;
         createProfile();
@@ -26,25 +25,26 @@ function signUp() {
   }
 }
 
-async function getToken(username, password) {
-  //return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMTYwODAxNywianRpIjoiMWFlZWYwYjktYTc0Yy00YmI1LWIzODQtZGI2Y2I0ODBlMGRkIiwibmJmIjoxNjIxNjA4MDE3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiVGVzdCIsImV4cCI6MTYyMTYwODkxN30.sr3yyamudvsGZrWmdbJjNNsmtrX4oDrz_6MfwIb8oc4";
+async function getToken(password) {
+  // return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMTYwODAxNywianRpIjoiMWFlZWYwYjktYTc0Yy00YmI1LWIzODQtZGI2Y2I0ODBlMGRkIiwibmJmIjoxNjIxNjA4MDE3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiVGVzdCIsImV4cCI6MTYyMTYwODkxN30.sr3yyamudvsGZrWmdbJjNNsmtrX4oDrz_6MfwIb8oc4";
+  const u = firebase.auth().currentUser;
   const data = {
-    username: username,
+    username: u.displayName,
     password: password,
   }
 
   const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getToken', {
     method: 'POST',
     headers: {
-      "Content-type": "application/json; charset=UTF-8"
+      "Content-type": "application/json"
     },
     body: JSON.stringify(data),
   });
-  console.log(res.ok);
 
   if (res.ok) {
     let json = await res.json();
-    console.log(json);
+    console.log(json["access_token"]);
+    localStorage.setItem("token", json["access_token"]);
   } else {
     alert('An error occurred while retrieving the token.');
   }
@@ -61,7 +61,8 @@ async function createProfile() {
   const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/createProfile', {
     method: 'POST',
     headers: {
-      "Content-type": "application/json; charset=UTF-8"
+      "Content-type": "application/json; charset=UTF-8",
+      "Authorization": `Bearer ${localStorage.getItem("token")}`
     },
     body: JSON.stringify(data),
   });
