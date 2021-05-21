@@ -1,3 +1,12 @@
+:root{
+    --bgcolor: aliceblue;
+    --mainFont: Georgia;
+    --signupColor: white;
+    --submitColor: #32a866;
+    --btnColor: #00c5bb;
+    --btnHoverColor: #076964;
+}
+
 #main
 {
     width: 100%;
@@ -8,31 +17,63 @@
 
 .inputs
 {
-    margin-left: 10%;
+    margin-left: 5px;
 }
 
 #login
 {
-    padding: 10px 50px 40px 50px;
-    /* background-color: aliceblue; */
+    padding: 10px 10px 20px 10px;
+    background-color: var(--signupColor);
     margin: auto;
-    width: 40%;
+    width: 30%;
     height: auto;
     border-radius: 15px;
+    display:flex;
+    flex-direction: column;
 }
 
 label
 {
-    width: 150px;
+    width: 25%;
     padding: 5px 0px 0px 5px;
-    margin: 5px 10px 10px 0px;
+    /*margin: 5px 10px 10px 0px;*/
     font-size: 16px;
     display: inline-block;
+    height:50px;
 }
 
-h3
+h1,h3,a
 {
     text-align: center;
+}
+
+span.icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+  }
+
+.customBtn {
+    display: inline-block;
+    background: white;
+    color: #444;
+    width: 220px;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+    margin:auto;
+}
+
+span#google{
+    background: url('./icons/g-normal.png') transparent 5px 50% no-repeat;
+}
+span#facebook{
+    background: url('./icons/facebook-icon.png') transparent 5px 50% no-repeat;
+}
+span#twitter{
+    background: url('./icons/twitter-icon.png') transparent 5px 50% no-repeat;
 }
 
 #remember-user
@@ -63,8 +104,23 @@ input
     margin: 3px 0px 3px 0px;
     font-size: 16px;
     border-width: 2px;
-    font-family: Raleway, "Alegreya", Helvetica;
+    /*font-family: Raleway, "Alegreya", Helvetica;*/
+    font-family: var(--mainFont);
     display: inline-block;
+}
+
+.textBox
+{
+    margin: 5px 5px 5px 5px;
+    float:right;
+    width:100%;
+}
+
+.container{
+    margin-left:5px;
+    height:50px;
+    width:65%;
+    float:right;
 }
 
 #submit:hover
@@ -75,7 +131,8 @@ input
 
 #submit
 {
-    font-family: Raleway, "Alegreya", Helvetica;
+    /*font-family: Raleway, "Alegreya", Helvetica;*/
+    font-family: var(--mainFont);
     background-color: #32a866;
     width: 90%;
     color: white;
@@ -91,5 +148,7 @@ body
 {
     padding: 0px;
     margin: 0px;
-    font-family: Raleway, "Alegreya", Helvetica;
+    /*font-family: Raleway, "Alegreya", Helvetica;*/
+    font-family: var(--mainFont);
+    background-color: var(--bgcolor);
 }
