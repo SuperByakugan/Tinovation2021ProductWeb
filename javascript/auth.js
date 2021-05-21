@@ -11,16 +11,68 @@ function signUp() {
     console.log(`Email: ${email}\nPassword: ${password}`);
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+        const token = getToken();
+        localStorage.setItem("token", token);
+
         user = userCredential.user;
+        createProfile();
+
         signedUp = true;
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
       })
       .catch((error) => {
         var errorMessage = error.message;
         console.log(errorMessage);
       });
+  }
+}
+
+async function getToken(username, password) {
+  //return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMTYwODAxNywianRpIjoiMWFlZWYwYjktYTc0Yy00YmI1LWIzODQtZGI2Y2I0ODBlMGRkIiwibmJmIjoxNjIxNjA4MDE3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiVGVzdCIsImV4cCI6MTYyMTYwODkxN30.sr3yyamudvsGZrWmdbJjNNsmtrX4oDrz_6MfwIb8oc4";
+  const data = {
+    username: username,
+    password: password,
+  }
+
+  const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getToken', {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify(data),
+  });
+  console.log(res.ok);
+
+  if (res.ok) {
+    let json = await res.json();
+    console.log(json);
+  } else {
+    alert('An error occurred while retrieving the token.');
+  }
+}
+
+async function createProfile() {
+  const u = firebase.auth().currentUser;
+  const data = {
+    id: u.uid,
+    username: u.displayName,
+    email: u.email,
+  }
+
+  const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/createProfile', {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify(data),
+  });
+  console.log(res.ok);
+
+  if (res.ok) {
+    let json = await res.json();
+    console.log(json);
+    alert('Successfully created your profile!')
+  } else {
+    alert('An error occurred while creating your profile');
   }
 }
 
@@ -30,9 +82,9 @@ function logIn() {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       user = userCredential.user;
+      const token = getToken();
+      localStorage.setItem("token", token);
       console.log(user);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
     })
     .catch((error) => {
       var errorMessage = error.message;

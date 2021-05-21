@@ -67,24 +67,21 @@ input
     display: inline-block;
 }
 
-#submit:hover
+#login-button:hover
 {
     background-color: #2d945a;
     cursor: pointer;
 }
 
-#submit
+#login-button
 {
-    font-family: Raleway, "Alegreya", Helvetica;
     background-color: #32a866;
-    width: 90%;
     color: white;
     border-radius: 5px;
     border: 1px;
     font-size: 16px;
     padding: 10px 20px 10px 20px;
-    margin-left: 5%;
-    
+    margin-left:46%;
 }
 
 body
