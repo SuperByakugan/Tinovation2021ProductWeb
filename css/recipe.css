@@ -1,3 +1,9 @@
+.total-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
 #title
 {
     font-family: Calibri;
@@ -8,11 +14,16 @@
     text-decoration-thickness: 2px;
 }
 
+.container
+{
+    padding-top: 2%;
+}
+
 .content
 {
     display: flex;
     width: 100%;
-    justify-self: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -36,7 +47,7 @@
 
 .img
 {
-    width: 30%;
+    width: 50%;
     height: auto;
 }
 
@@ -57,4 +68,5 @@ body{
 .recipe-image
 {
     border-radius: 5px;
+    
 }
