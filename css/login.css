@@ -88,3 +88,12 @@ input
     font-family: Raleway, "Alegreya", Helvetica;
     display: inline-block;
 }
+
+.blue-btn {
+    background-color: #45aaf2 !important;
+}
+
+.blue-btn-text {
+    color: white !important;
+    font-size: 20px !important;
+}

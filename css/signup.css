@@ -81,3 +81,12 @@ input
     border-width: 2px;
     display: inline-block;
 }
+
+.blue-btn {
+    background-color: #4b7bec !important;
+}
+
+.blue-btn-text {
+    color: white !important;
+    font-size: 20px !important;
+}
