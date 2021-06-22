@@ -1,12 +1,12 @@
 .navbar-title {
     font-size: 36px !important;
     font-weight: 600;
-    color: #ff6565;
+    color: #0984e3;
     padding-top: 0% !important;
 }
 
 .navbar-title:hover {
-    color: #ec6e6e;
+    color: #74b9ff;
 }
 
 .navbar-item {
@@ -21,15 +21,15 @@
 }
 
 .active {
-    color: #eb4d4b !important;
+    color: #0984e3 !important;
 }
 
 .nav-link:hover {
-    color: #ec6e6e !important;
+    color: #74b9ff !important;
 }
 
 .create-recipe-btn {
-    background-color: #e74c3c !important;
+    background-color: #4c78dd !important;
 }
 
 .create-recipe-btn-text {

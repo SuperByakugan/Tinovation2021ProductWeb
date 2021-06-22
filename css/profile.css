@@ -1,6 +1,4 @@
 #update{
-    background-color: greenyellow;
-    border: 2px solid black;
     display: block;
 }
 
@@ -61,7 +59,7 @@ table, td, th{
 }
 
 .edit-profile-btn {
-    background-color: #ff8686 !important;
+    background-color: #00a8ff !important;
 }
 
 .edit-profile-btn-text {
