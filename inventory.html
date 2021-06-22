@@ -73,8 +73,6 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Add an Item
                 </button>
-                <button onclick="invOut();" type="button" class="btn btn-primary" id="addButton">Add Items</button>
-                <button onclick="adderOut()" type="button" class="btn btn-secondary" id="invButton">Inventory</button>
             </div>
 
             <!-- Modal -->
@@ -89,7 +87,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <form>
+                                <div class="mb-3">
+                                    <label for="itemName" class="form-label">Name of Item</label>
+                                    <input type="name" class="form-control" id="itemName" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemQuantity" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" id="itemQuantity" placeholder="">
+                                </div>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -99,57 +106,6 @@
                 </div>
             </div>
 
-            <div id="Adder" class="grid-container">
-                <div class="box" id="notch">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ed/Enchanted_Golden_Apple_JE2_BE2.gif"
-                        class="img">
-                    <p class="text">Enchanted Golden Apple</p>
-                    <label for="box1" class="text" style="display:block;">QTY:</label>
-                    <input id="box1" type="text" size="5">
-                </div>
-                <div class="box" id="gapple">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/54/Golden_Apple_JE2_BE2.png"
-                        class="img">
-                    <p class="text">Golden Apple</p>
-
-                    <label for="box2" class="text" style="display:block;">QTY:</label>
-                    <input id="box2" type="text" size="5">
-                </div>
-                <div class="box" id="apple">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/af/Apple_JE3_BE3.png"
-                        class="img">
-                    <p class="text">Apple</p>
-                    <label for="box3" class="text" style="display:block;">QTY:</label>
-                    <input id="box3" type="text" size="5">
-                </div>
-            </div>
-            <div id="submittors">
-                <label for="submit" class="text">Add to Fridge</label>
-                <input type="submit" id="submit"></input>
-            </div>
-            <div id="SeeItems" class="grid-container" style="display:none">
-                <div class="box" id="notch">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ed/Enchanted_Golden_Apple_JE2_BE2.gif"
-                        class="img">
-                    <p class="text">Enchanted Golden Apple</p>
-                    <label for="box1" class="text">QTY:</label>
-                    <p id="box1" class="text" style="margin-left: 0px">5</p>
-                </div>
-                <div class="box" id="gapple">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/54/Golden_Apple_JE2_BE2.png"
-                        class="img">
-                    <p class="text">Golden Apple</p>
-                    <label for="box2" class="text">QTY:</label>
-                    <p id="box2" class="text" style="margin-left: 0px">5</p>
-                </div>
-                <div class="box" id="apple">
-                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/af/Apple_JE3_BE3.png"
-                        class="img">
-                    <p class="text">Apple</p>
-                    <label for="box3" class="text">QTY:</label>
-                    <p id="box3" class="text" style="margin-left: 0px">5</p>
-                </div>
-            </div>
         </div>
     </div>
 
