@@ -70,16 +70,18 @@
         <div class="contentContainer border-start">
             <div class="profile-info" id="profileContent">
                 <img src="./res/images/avatar.png" class="avatar" id="pfp">
-                <h3 id="user" class="username">John Doe</h3>
-                <!--<a href="edit-profile.html"> <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text">
+                <div style="padding-top: 15px; padding-bottom: 15px;">
+                    <h3 id="user" class="username" style="display: inline-block; padding-right: 20px;">John Doe</h3>
+                    <!--<a href="edit-profile.html"> <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile</button></a>-->
+                    <button style="display: inline-block;" type="button" id="update"
+                        class="btn edit-profile-btn edit-profile-btn-text" onclick="updateInfo()">
                         <i class="fas fa-edit"></i>
-                        Edit Profile</button></a>-->
-                <button type="button" id="update" class="btn edit-profile-btn edit-profile-btn-text"
-                    onclick="updateInfo()">
-                    <i class="fas fa-edit"></i>
-                    Edit Profile</button>
+                        Edit Profile</button>
+                </div>
             </div>
-            <hr>
+
             <div class="col recipe-col dashboard-content">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
