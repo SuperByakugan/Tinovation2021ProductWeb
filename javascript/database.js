@@ -1,18 +1,10 @@
 var user;
 var uid;
 
-//getToken method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function getToken() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-    var email = localStorage.getItem("email");
-    var password = localStorage.getItem("password");
-	//testing
-	email = "foo@gmail.com";
-	//testing
-	password = "abc";
+async function getToken(username, password) {
     const info = {
-        "username": email,
-		"password": password
+        "username": username,
+        "password": password
     };
 
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getToken', {
@@ -27,22 +19,53 @@ async function getToken() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully got the token!')
+        localStorage.token = json["access_token"]
     } else {
         alert('An error occurred while trying to get the token');
     }
 }
 
+async function createProfile() {
+    const u = firebase.auth().currentUser;
+    const data = {
+        id: u.uid,
+        username: u.displayName,
+        email: u.email,
+    }
+
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/createProfile', {
+        method: 'POST',
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+        let json = await res.json();
+        console.log(json);
+        alert('Successfully created your profile!')
+        window.location = "dashboard.html";
+    }
+}
+
 //getProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function getProfile(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getProfile', {
+async function getProfile() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const u = firebase.auth().currentUser;
+    const data = {
+        id: u.uid,
+        username: u.displayName,
+        email: u.email,
+    }
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getProfile', {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
+        body: JSON.stringify(data),
     });
     console.log(res.ok);
 
@@ -56,17 +79,17 @@ async function getProfile(){
 }
 
 //updateProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function updateProfile(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const u = firebase.auth().currentUser;
-	const data = {
-		"id": u.uid
-	}
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/updateProfile', {
+async function updateProfile() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const u = firebase.auth().currentUser;
+    const data = {
+        "id": u.uid
+    }
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/updateProfile', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -82,13 +105,13 @@ async function updateProfile(){
 }
 
 //deleteProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function deleteProfile(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/deleteProfile', {
+async function deleteProfile() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/deleteProfile', {
         method: 'DELETE',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -104,17 +127,17 @@ async function deleteProfile(){
 }
 
 //updateItems method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function updateItems(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const u = firebase.auth().currentUser;
-	const data = {
-		"id": u.uid
-	}
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/updateItems', {
+async function updateItems() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const u = firebase.auth().currentUser;
+    const data = {
+        "id": u.uid
+    }
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/updateItems', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -130,13 +153,13 @@ async function updateItems(){
 }
 
 //getInventory method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function getInventory(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getInventory', {
+async function getInventory() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getInventory', {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -152,13 +175,13 @@ async function getInventory(){
 }
 
 //getCommunityRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function getCommunityRecipes(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getCommunityRecipes', {
+async function getCommunityRecipes() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getCommunityRecipes', {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -174,17 +197,17 @@ async function getCommunityRecipes(){
 }
 
 //postRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function postRecipes(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const u = firebase.auth().currentUser;
-	const data = {
-		"id": u.uid
-	}
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/postRecipes', {
+async function postRecipes() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const u = firebase.auth().currentUser;
+    const data = {
+        "id": u.uid
+    }
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/postRecipes', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -200,13 +223,13 @@ async function postRecipes(){
 }
 
 //getRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function getRecipes(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getRecipes', {
+async function getRecipes() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getRecipes', {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });
@@ -222,17 +245,17 @@ async function getRecipes(){
 }
 
 //likeRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
-async function likeRecipes(){
-	//if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
-	const u = firebase.auth().currentUser;
-	const data = {
-		"id": u.uid
-	}
-	const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/likeRecipes', {
+async function likeRecipes() {
+    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    const u = firebase.auth().currentUser;
+    const data = {
+        "id": u.uid
+    }
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/likeRecipes', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-			"Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": 'Bearer ${localStorage.getItem("token")}'
         },
         body: JSON.stringify(info),
     });

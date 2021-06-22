@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="totalContainer">
+    <div class="container totalContainer">
         <div class="sideBar">
             <ul class="nav flex-column">
                 <li>
@@ -68,36 +68,46 @@
             </ul>
         </div>
         <div class="contentContainer border-start">
-            <h1>Profile</h1>
-            <div class="profile-info" id = "profileContent">
-                <img src="./res/images/avatar.png" class="avatar" id = "pfp">
-                <h3 id = "user" class="username">John Doe</h3>
+            <div class="profile-info" id="profileContent">
+                <img src="./res/images/avatar.png" class="avatar" id="pfp">
+                <h3 id="user" class="username">John Doe</h3>
                 <!--<a href="edit-profile.html"> <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text">
                         <i class="fas fa-edit"></i>
                         Edit Profile</button></a>-->
-                <button type="button" id = "update" class="btn edit-profile-btn edit-profile-btn-text" onclick="updateInfo()">
+                <button type="button" id="update" class="btn edit-profile-btn edit-profile-btn-text"
+                    onclick="updateInfo()">
                     <i class="fas fa-edit"></i>
                     Edit Profile</button>
             </div>
             <hr>
             <h3 class="my-recipes-title">My Recipes</h3>
-            <div class="col recipe-col">
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/pancake.jpg" class="recipe-image">
-                        <h3>Pancake</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+            <div class="col recipe-col dashboard-content">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link recipe-tab" href="#">Feed</a>
+                    </li>
+                </ul>
+                <div class="col recipe-col">
+                    <div class="recipe-outline">
+                        <div class="recipe">
+                            <img src="res/images/pancake.jpg" class="recipe-image">
+                            <h3>Pancake</h3>
+                            <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
+                                debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
+                                molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+                        </div>
                     </div>
-                </div>
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/salad.jpg" class="recipe-image">
-                        <h3>Salad</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+                    <div class="recipe-outline">
+                        <div class="recipe">
+                            <img src="res/images/salad.jpg" class="recipe-image">
+                            <h3>Salad</h3>
+                            <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
+                                debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
+                                molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+                        </div>
                     </div>
                 </div>
             </div>
