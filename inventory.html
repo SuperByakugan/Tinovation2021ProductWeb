@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Inventory - Portable Fridge</title>
+
+    <script src="./javascript/inventory.js"></script>
 </head>
 
 <body>
@@ -68,14 +68,37 @@
                 </li>
             </ul>
         </div>
-        <div class="contentContainer content-border alignContents border-start">
+        <div class="contentContainer content-border">
             <div>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Add an Item
                 </button>
             </div>
 
-            <!-- Modal -->
+            <div id="items" class="row">
+                <div id="item-card" class="col">
+                    <div class="card text-center item-card-content" style="width: 220px; height: 200px;">
+                        <div>
+                            <h5 class="item-title card-title">Apples</h5>
+                            <div style="padding: 10px;"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="decrease-quantity btn" type="button"><i
+                                            class="fas fa-minus"></i></button>
+                                </div>
+                                <div class="col item-quantity">
+                                    5
+                                </div>
+                                <div class="col">
+                                    <button class="increase-quantity btn" type="button"><i
+                                            class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -100,12 +123,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Add</button>
+                            <button type="button" class="btn btn-primary" onclick="addItem()">Add</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 

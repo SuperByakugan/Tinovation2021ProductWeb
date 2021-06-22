@@ -66,11 +66,13 @@ input:valid{
 #prevBtn {
     font-size: 40px;
     color: #0984e3;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #nextBtn {
     font-size: 40px;
     color: #0984e3;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 input
