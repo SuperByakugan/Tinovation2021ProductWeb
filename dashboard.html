@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/recipe.css">
 
     <script src="https://kit.fontawesome.com/299e4b8f4c.js" crossorigin="anonymous"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
@@ -90,47 +92,83 @@
         <div class="contentContainer content-border border-start">
             <div class="col recipe-col dashboard-content">
                 <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Explore</a>
+                    <li class="active nav-item"><a class="nav-link active tab-nav-item" data-toggle="tab"
+                            href="#explore-tab">Explore</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link recipe-tab" href="#">Feed</a>
+                    <li class="nav-item"><a class="nav-link tab-nav-item" data-toggle="tab" href="#feed-tab">Feed</a>
                     </li>
                 </ul>
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/pizza.jpg" class="recipe-image">
-                        <h3>Pizza</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+                <div class="tab-content">
+                    <div id="explore-tab" class="tab-pane active">
+                        <div class="recipe">
+                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
+                                <img src="res/images/pizza.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3>Pizza</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
+                                        est atque voluptas
+                                        quo
+                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
+                                        voluptates
+                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
+                                        33
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recipe">
+                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
+                                <img src="res/images/soup.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3>Soup</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
+                                        est
+                                        atque voluptas
+                                        quo
+                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
+                                        voluptates
+                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
+                                        33
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/soup.jpg" class="recipe-image">
-                        <h3>Soup</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
-                    </div>
-                </div>
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/lasagna.jpg" class="recipe-image">
-                        <h3>Lasagna</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
-                    </div>
-                </div>
-                <div class="recipe-outline">
-                    <div class="recipe">
-                        <img src="res/images/cake.jpg" class="recipe-image">
-                        <h3>Cake</h3>
-                        <p>Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt est atque voluptas quo
-                            debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et voluptates
-                            molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique 33</p>
+                    <div id="feed-tab" class="tab-pane">
+                        <div class="recipe">
+                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
+                                <img src="res/images/lasagna.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3>Lasagna</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
+                                        est
+                                        atque voluptas
+                                        quo
+                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
+                                        voluptates
+                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
+                                        33
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recipe">
+                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
+                                <img src="res/images/cake.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3>Cake</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
+                                        est
+                                        atque voluptas
+                                        quo
+                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
+                                        voluptates
+                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
+                                        33
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

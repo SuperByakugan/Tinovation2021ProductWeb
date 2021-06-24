@@ -17,15 +17,15 @@
 }
 
 .increase-quantity {
-    font-size: 25px !important;
-    background-color: #1dd1a1;
-    color: white;
+    font-size: 22px !important;
+    background-color: #1dd1a1 !important;
+    color: white !important;
 }
 
 .decrease-quantity {
-    font-size: 25px !important;
-    background-color: #ff6b6b;
-    color: white;
+    font-size: 22px !important;
+    background-color: #ff6b6b !important;
+    color: white !important;
 }
 
 .grid-container {
