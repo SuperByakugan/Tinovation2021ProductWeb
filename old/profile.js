@@ -20,17 +20,12 @@
 
 
         function editProfile(){
-            /*let divContainer = document.createElement("DIV");
-            divContainer.id = "information";
-            divContainer.style.float = "right";
-            divContainer.style.display = "block";
-            divContainer.style.position = "relative";*/
             let divContainer = document.getElementById("information");
             for(let i = 0; i < 6; i++){
                 let informationUpdates = document.createElement("textarea");
                 informationUpdates.classList.add("profileObject");
                 informationUpdates.style.position = "relative";
-                informationUpdates.style.display = "block";
+                informationUpdates.style.display = "flex";
                 informationUpdates.style.alignItems = "center";
                 informationUpdates.style.marginLeft = "auto";
                 informationUpdates.style.marginRight = "auto";

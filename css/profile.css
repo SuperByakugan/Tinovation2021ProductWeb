@@ -10,6 +10,17 @@
     align-items: left;
 }
 
+#information{
+    align-items: left;
+    flex-direction: column!important;
+    display: flex;
+}
+.profileObject
+{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+}
 #pfp{
     max-width: 300px; 
 }

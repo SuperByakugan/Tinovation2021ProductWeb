@@ -5,11 +5,9 @@
     display: block;
 }
 #information{
-    float: right;
-    align-items: right;
-    position: relative;
-    display: block;
-    grid-column-start: 12;
+    align-items: left;
+    flex-direction: column!important;
+    display: flex;
 }
 
 #pfp{
@@ -43,4 +41,10 @@ body{
 }
 .grid{
     border: 1px solid black;
+}
+
+.profileObject
+{
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
