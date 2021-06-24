@@ -14,12 +14,12 @@ async function getToken(username, password) {
         },
         body: JSON.stringify(info),
     });
-    console.log(res.ok);
 
     if (res.ok) {
         let json = await res.json();
         console.log(json);
         localStorage.token = json["access_token"]
+        return json["access_token"];
     } else {
         alert('An error occurred while trying to get the token');
     }
@@ -89,9 +89,9 @@ async function updateProfile() {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
+        body: JSON.stringify(data),
     });
     console.log(res.ok);
 
@@ -196,29 +196,41 @@ async function getCommunityRecipes() {
     }
 }
 
-//postRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function postRecipes() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
+    if (localStorage.getItem("token") == null) return console.log("User is not logged in.");
     const u = firebase.auth().currentUser;
+    console.log(u);
+
+    const name = document.getElementById("recipe-name").value;
+    const ingredients = document.getElementById("ingredients").value;
+    const prepTime = document.getElementById("prep-time").value;
+    const cookTime = document.getElementById("cook-time").value;
+    const directions = document.getElementById("directions").value;
     const data = {
-        "id": u.uid
+        "id": u.uid,
+        "name": name,
+        "ingredients": ingredients,
+        "prepTime": prepTime,
+        "cookTime": cookTime,
+        "directions": directions,
     }
+
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/postRecipes', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
+        body: JSON.stringify(data),
     });
     console.log(res.ok);
 
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully posted recipes!')
+        alert('Successfully posted your recipe!')
     } else {
-        alert('An error occurred while trying to post recipes');
+        alert('An error occurred while trying to post your recipe');
     }
 }
 
@@ -275,17 +287,18 @@ async function likeRecipes() {
 async function addItem() {
     //item is the name of the item and quantity is how much of the item
     //TODO: CHANGE THE IDS TO WHAT THE TEXT FIELDS ACTUALLY ARE
-    var itemName = document.getElementById("item").value;
-    var quantity = document.getElementById("quantity").value;
+    // var itemName = document.getElementById("item").value;
+    // var quantity = document.getElementById("quantity").value;
     const item = {
-        itemName: quantity
+        pizza: 10
     };
 
     //TODO: NOT SURE WHAT URL SHOULD BE SO WILL FIGURE THAT OUT, SHUD BE THE ID + '/' + UID
-    const res = await fetch('url', {
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/addItems', {
         method: 'POST',
         headers: {
-            "Content-type": "application/json; charset=UTF-8"
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
         body: JSON.stringify(item),
     });

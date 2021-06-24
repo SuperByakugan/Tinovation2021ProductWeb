@@ -13,6 +13,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3NE70qDyne-S-Hh3lFY_HYFUtoX3tMmU",
+            authDomain: "portablefridge-311105.firebaseapp.com",
+            projectId: "portablefridge-311105",
+            storageBucket: "portablefridge-311105.appspot.com",
+            messagingSenderId: "58261389900",
+            appId: "1:58261389900:web:a1f7ef525787dba03beae9",
+            measurementId: "G-B92K09WZCD"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/database.js"></script>
 
     <title>Portable Fridge</title>
 </head>
@@ -65,30 +85,30 @@
 
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Recipe Name</label>
-                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        <label for="recipe-name">Recipe Name</label>
+                        <input type="name" class="form-control" id="recipe-name" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Ingredients</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <label for="ingredients">Ingredients</label>
+                        <textarea class="form-control" id="ingredients" rows="4"></textarea>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputPrepTime">Prep Time</label>
-                            <input type="text" class="form-control" id="inputPrepTime">
+                            <label for="prep-time">Prep Time</label>
+                            <input type="text" class="form-control" id="prep-time">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputCookTime">Cook Time</label>
-                            <input type="text" class="form-control" id="inputCookTime">
+                            <label for="cook-time">Cook Time</label>
+                            <input type="text" class="form-control" id="cook-time">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Directions</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                        <label for="directions">Directions</label>
+                        <textarea class="form-control" id="directions" rows="6"></textarea>
                     </div>
                 </form>
                 <div style="padding-top: 20px;">
-                    <button type="button" class="btn btn-success">Create Recipe</button>
+                    <button type="button" class="btn btn-success" onclick="postRecipes()">Create Recipe</button>
                 </div>
             </div>
 

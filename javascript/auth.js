@@ -13,8 +13,6 @@ function signUp() {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         signedUp = true;
-        const token = getToken(email, password);
-
         user = userCredential.user;
         createProfile();
       })
