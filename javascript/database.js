@@ -72,7 +72,6 @@ async function getProfile() {
 
 //updateProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function updateProfile() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const u = firebase.auth().currentUser;
     const data = {
         "id": u.uid
@@ -96,9 +95,7 @@ async function updateProfile() {
     }
 }
 
-//deleteProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function deleteProfile() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/deleteProfile', {
         method: 'DELETE',
         headers: {
@@ -117,9 +114,7 @@ async function deleteProfile() {
     }
 }
 
-//updateItems method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function updateItems() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const u = firebase.auth().currentUser;
     const data = {
         "id": u.uid
@@ -143,9 +138,7 @@ async function updateItems() {
     }
 }
 
-//getInventory method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function getInventory() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getInventory', {
         method: 'GET',
         headers: {
@@ -165,9 +158,7 @@ async function getInventory() {
     }
 }
 
-//getCommunityRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function getCommunityRecipes() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getCommunityRecipes', {
         method: 'GET',
         headers: {
@@ -225,9 +216,7 @@ async function postRecipes() {
     }
 }
 
-//getRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function getRecipes() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getRecipes', {
         method: 'GET',
         headers: {
@@ -247,9 +236,7 @@ async function getRecipes() {
     }
 }
 
-//likeRecipes method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function likeRecipes() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const u = firebase.auth().currentUser;
     const data = {
         "id": u.uid
@@ -273,19 +260,13 @@ async function likeRecipes() {
     }
 }
 
-//adds items to their list by getting the item from a field and quantity from a field and adding it
-//in the format of item: quantity in the JSON so quantities can be accesses using the item name
-async function addItem() {
-    //item is the name of the item and quantity is how much of the item
-    //TODO: CHANGE THE IDS TO WHAT THE TEXT FIELDS ACTUALLY ARE
-    // var itemName = document.getElementById("item").value;
-    // var quantity = document.getElementById("quantity").value;
+async function addItem(itemName, quantity) {
     const item = {
-        pizza: 10
+        itemName: itemName,
+        quantity: quantity
     };
-
-    //TODO: NOT SURE WHAT URL SHOULD BE SO WILL FIGURE THAT OUT, SHUD BE THE ID + '/' + UID
-    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/addItems', {
+    const u = firebase.auth().currentUser;
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/addItems?id=' + u.uid, {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
