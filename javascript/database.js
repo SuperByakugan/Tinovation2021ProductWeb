@@ -52,15 +52,12 @@ async function createProfile() {
 
 //getProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function getProfile() {
-    //if (localStorage.getItem("email") == null) return console.log("User is not logged in.");
     const u = firebase.auth().currentUser;
     const data = {
         id: u.uid,
-        username: u.displayName,
-        email: u.email,
     }
     const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getProfile', {
-        method: 'GET',
+        method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
             "Authorization": `Bearer ${localStorage.getItem("token")}`

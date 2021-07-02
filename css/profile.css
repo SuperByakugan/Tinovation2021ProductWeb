@@ -78,6 +78,25 @@ table, td, th{
     font-size: 15px !important;
 }
 
+.log-out-btn {
+    background-color: #594fe6 !important;
+}
+
+.log-out-btn-text {
+    color: white !important;
+    font-size: 15px !important;
+}
+
+.delete-account-btn {
+    background-color: #da4848 !important;
+}
+
+.delete-account-btn-text {
+    color: white !important;
+    font-size: 15px !important;
+}
+
+
 .col {
     padding-left: 0 !important;
 }

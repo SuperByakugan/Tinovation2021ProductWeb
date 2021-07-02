@@ -6,7 +6,7 @@ function signUp() {
   const password = document.getElementById("pwd").value;
   const confirmationPassword = document.getElementById("pwd2").value;
   if (password != confirmationPassword) {
-    console.log(`Passwords don't match`);
+    alert("Passwords don't match.")
   } else {
     console.log(`Email: ${email}\nPassword: ${password}`);
 
@@ -19,6 +19,7 @@ function signUp() {
       .catch((error) => {
         var errorMessage = error.message;
         console.log(errorMessage);
+        alert("An error occurred while creating your account.");
       });
   }
 }
@@ -38,6 +39,7 @@ function logIn() {
     .catch((error) => {
       var errorMessage = error.message;
       console.log(errorMessage);
+      alert("Incorrect email or password.")
     });
 }
 
@@ -65,8 +67,10 @@ firebase.auth().onAuthStateChanged((user) => {
 function logOut() {
   firebase.auth().signOut().then(() => {
     localStorage.removeItem("token");
+    window.location = "index.html";
   }).catch((error) => {
-
+    alert("An error occurred while logging you out.")
+    console.log(error);
   });
 }
 
