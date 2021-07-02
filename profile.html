@@ -1,173 +1,39 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/profile.css">
-    <link rel="stylesheet" href="./css/recipe.css">
-
-    <script src="https://kit.fontawesome.com/299e4b8f4c.js" crossorigin="anonymous"></script>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Profile - Portable Fridge</title>
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyB3NE70qDyne-S-Hh3lFY_HYFUtoX3tMmU",
-            authDomain: "portablefridge-311105.firebaseapp.com",
-            projectId: "portablefridge-311105",
-            storageBucket: "portablefridge-311105.appspot.com",
-            messagingSenderId: "58261389900",
-            appId: "1:58261389900:web:a1f7ef525787dba03beae9",
-            measurementId: "G-B92K09WZCD"
-        };
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-    <script src="./javascript/index.js"></script>
-    <script src="./javascript/profile.js"></script>
-    <script src="./javascript/database.js"></script>
-    <script src="./javascript/auth.js"></script>
-</head>
-
-<body>
-    <div class="container totalContainer">
-        <div class="sideBar">
-            <ul class="nav nav2 flex-column">
-                <li>
-                    <a class="nav-link navbar-brand navbar-title" href="dashboard.html">Portable Fridge</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-item" href="dashboard.html">
-                        <i class="nav-icon fas fa-home"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-item" href="inventory.html">
-                        <i class="nav-icon fas fa-list"></i>
-                        Inventory
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-item active" aria-current="page" href="profile.html">
-                        <i class="nav-icon fas fa-user"></i>
-                        Profile
-                    </a>
-                </li>
-                <!--<li class="nav-item">
-                    <a class="nav-link navbar-item" href="about.html">
-                        <i class="nav-icon fas fa-info-circle"></i>
-                        About
-                    </a>
-                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link navbar-item" href="create-recipe.html"> <button type="button"
-                            class="btn blue-btn blue-btn-text">
-                            <i class="fas fa-plus"></i>
-                            Create Recipe
-                        </button>
-                    </a>
-                </li>
-
-            </ul>
+<!Doctype html>
+<html>
+    <head>
+        <title>My Profile</title>
+        <link rel = "stylesheet" href = "profile.css"/>
+        <script src = "profile.js"></script>
+    </head>
+    <body>
+        <div id = "imgDisplay" class = "grid">
+            <div class = "imgDetails"><img class = "infoDisplay" id = "pfp" src = "#" alt = "Profile Picture"></div>
+            <div class = "imgDetails"><textarea autofocus id = "imgLink" class = "profileObject" style = "display: none" placeholder="Set Profile Picture (put a link)"></textarea></div>
         </div>
-        <div class="contentContainer content-border border-start" style="padding-left: 30px;">
-            <div class="profile-info" id="profileContent">
-                <img src="./res/images/avatar.png" class="avatar" id="pfp">
-                <div id="information"></div>
-                <div style="padding-top: 15px; padding-bottom: 15px;">
-                    <h3 id="username" class="username" style="display: inline-block; padding-right: 20px;">John Doe</h3>
-                    <button style="display: inline-block;" type="button" id="update"
-                        class="btn edit-profile-btn edit-profile-btn-text" onclick="updateInfo()">
-                        <i class="fas fa-edit"></i>
-                        Edit Profile</button>
-                    <button style="display: inline-block;" type="button" id="update"
-                        class="btn log-out-btn log-out-btn-text" onclick="logOut()">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Log Out</button>
-                    <button style="display: inline-block;" type="button" id="update"
-                        class="btn delete-account-btn delete-account-btn-text" onclick="deleteAccount()">
-                        <i class="fas fa-trash"></i>
-                        Delete Account</button>
-                </div>
-            </div>
-
-            <div class="col recipe-col dashboard-content">
-                <ul class="nav nav-tabs">
-                    <li class="active nav-item"><a class="nav-link active tab-nav-item" data-toggle="tab"
-                            href="#my-recipes-tab">My
-                            Recipes</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link tab-nav-item" data-toggle="tab"
-                            href="#favorite-recipes-tab">Favorite
-                            Recipes</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="my-recipes-tab" class="tab-pane active">
-                        <div class="recipe">
-                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
-                                <img src="res/images/pancake.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h3>Pancake</h3>
-                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
-                                        est
-                                        atque voluptas
-                                        quo
-                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
-                                        voluptates
-                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
-                                        33
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="favorite-recipes-tab" class="tab-pane">
-                        <div class="recipe">
-                            <div class="card shadow mb-4 bg-white rounded" style="width: 100%;">
-                                <img src="res/images/salad.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h3>Salad</h3>
-                                    <p class="card-text">Lorem ipsum dolor sit amet. Et nostrum quia 33 dolorem nesciunt
-                                        est
-                                        atque voluptas
-                                        quo
-                                        debitis cupiditate eos odit unde est dolore nisi aut nobis aliquam! Et
-                                        voluptates
-                                        molestias nam praesentium est possimus fugit vel quam autem ex eveniet similique
-                                        33
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id = "information" class = "grid">
+            <button id = "update" onclick = "updateInfo();">Edit Profile</button>
         </div>
-    </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+       <table id = "starredList" class = "grid">
+           <thead>
+                <tr>
+                    <th>Recipe Name</th>
+                    <th>Recipe Link</th>
+                </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>Recipe 1</td>
+                   <td><a href = "#">Link for Recipe 1</a></td>
+               </tr>
+               <tr>
+                    <td>Recipe 2</td>
+                    <td><a href = "#">Link for Recipe 2</a></td>
+                </tr>
+                <tr>
+                    <td>Recipe 3</td>
+                    <td><a href = "#">Link for Recipe 3</a></td>
+                </tr>
+           </tbody>
+       </table>
+    </body>
 </html>
