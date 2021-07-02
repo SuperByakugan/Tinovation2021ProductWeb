@@ -1,7 +1,8 @@
 window.onload = function () {
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
-            console.log(await getProfile());
+            const profile = await getProfile();
+            document.getElementById("username").innerHTML = profile.username == null ? profile.email : profile.username;
         }
     });
 };

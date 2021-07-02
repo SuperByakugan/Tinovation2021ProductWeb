@@ -29,7 +29,7 @@ async function createProfile() {
     const u = firebase.auth().currentUser;
     const data = {
         id: u.uid,
-        username: u.displayName,
+        username: u.username,
         email: u.email,
     }
 
@@ -50,26 +50,21 @@ async function createProfile() {
     }
 }
 
-//getProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function getProfile() {
     const u = firebase.auth().currentUser;
-    const data = {
-        id: u.uid,
-    }
-    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getProfile', {
-        method: 'POST',
+    const res = await fetch(`https://portablefridge-311105.wm.r.appspot.com/getProfile?id=${u.uid}`, {
+        method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
             "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(data),
     });
     console.log(res.ok);
 
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully got the profile!')
+        return json;
     } else {
         alert('An error occurred while trying to get the profile');
     }
@@ -108,9 +103,8 @@ async function deleteProfile() {
         method: 'DELETE',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
     });
     console.log(res.ok);
 
