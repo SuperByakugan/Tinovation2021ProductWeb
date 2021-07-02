@@ -70,7 +70,6 @@ async function getProfile() {
     }
 }
 
-//updateProfile method JSON RESULT IS ONLY PRINTED IN CONSOLE AS OF RIGHT NOW, NEED TO ACTUALLY GET INFORMATION FROM JSON
 async function updateProfile() {
     const u = firebase.auth().currentUser;
     const data = {
@@ -159,20 +158,20 @@ async function getInventory() {
 }
 
 async function getCommunityRecipes() {
-    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getCommunityRecipes', {
+    const u = firebase.auth().currentUser;
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getCommunityRecipes?id=' + u.uid, {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
     });
     console.log(res.ok);
 
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully got community recipes!')
+        return json;
     } else {
         alert('An error occurred while trying to get community recipes');
     }
@@ -217,20 +216,20 @@ async function postRecipes() {
 }
 
 async function getRecipes() {
-    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getRecipes', {
+    const u = firebase.auth().currentUser;
+    const res = await fetch('https://portablefridge-311105.wm.r.appspot.com/getRecipes?id=', {
         method: 'GET',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": 'Bearer ${localStorage.getItem("token")}'
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
         },
-        body: JSON.stringify(info),
     });
     console.log(res.ok);
 
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully got recipes!')
+        return json;
     } else {
         alert('An error occurred while trying to get recipes');
     }
