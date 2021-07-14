@@ -259,7 +259,7 @@ async function likeRecipes() {
     }
 }
 
-async function addItem(itemName, quantity) {
+/*async function addItem(itemName, quantity) {
     const item = {
         itemName: itemName,
         quantity: quantity
@@ -279,10 +279,11 @@ async function addItem(itemName, quantity) {
         let json = await res.json();
         console.log(json);
         alert('Successfully added your recipe!')
-    } else {
+    } else
+    {
         alert('An error occurred while trying to add your recipe');
     }
-}
+}*/
 
 //fetches the corresponding quantity value stored in the JSON
 async function getItemQuantity(itemName) {

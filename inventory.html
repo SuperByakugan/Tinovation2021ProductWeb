@@ -82,7 +82,7 @@
         </div>
         <div class="contentContainer content-border">
             <div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button style = "margin-bottom: 20px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Add an Item
                 </button>
             </div>
@@ -91,19 +91,19 @@
                 <div id="item-card" class="col">
                     <div class="card text-center item-card-content" style="width: 220px; height: 200px;">
                         <div>
-                            <h5 class="item-title card-title">Apples</h5>
+                            <h5 class="item-title card-title" id = "item-title">Apples</h5>
                             <div style="padding: 10px;"></div>
                             <div class="row">
                                 <div class="col">
                                     <button class="decrease-quantity btn" type="button"><i
-                                            class="fas fa-minus"></i></button>
+                                            class="fas fa-minus" onclick = "minus(this)"></i></button>
                                 </div>
-                                <div class="col item-quantity">
+                                <div class="col item-quantity" id = "item-quantity">
                                     5
                                 </div>
                                 <div class="col">
                                     <button class="increase-quantity btn" type="button"><i
-                                            class="fas fa-plus"></i></button>
+                                            class="fas fa-plus" onclick = "plus(this)"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
+    <script src = "./javascript/inventory.js"></script>
     <script type="text/javascript">
         function adderOut() {
             document.getElementById('Adder').style.display = 'none';
