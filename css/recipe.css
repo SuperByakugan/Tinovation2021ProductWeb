@@ -83,14 +83,14 @@ body{
 }
 
 .recipe-title {
-    color: rgb(51, 51, 51) !important;
+    color: rgb(78, 135, 221) !important;
     font-weight: 500 !important;
     font-size: 40px !important;
 }
 
 .recipe-page-image {
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 40px;
 }
 
 .recipe-directions {
@@ -98,5 +98,9 @@ body{
 }
 
 .recipe-ingredients {
+    font-size: 20px !important;
+}
+
+.recipe-time {
     font-size: 20px !important;
 }
