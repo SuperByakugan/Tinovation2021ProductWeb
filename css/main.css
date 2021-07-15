@@ -81,3 +81,7 @@ hr {
     position: relative;
     z-index: 100;
 }
+
+a:hover {
+    text-decoration: none !important;
+}

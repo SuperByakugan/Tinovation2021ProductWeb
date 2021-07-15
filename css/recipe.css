@@ -71,26 +71,31 @@ body{
 }
 
 .recipe-owner {
-    color: grey;
+    color: rgb(78, 78, 78);
+    font-weight: 300 !important;
+    font-size: 20px !important;
+}
+
+.recipe-description {
     font-weight: 400 !important;
-    font-size: 15 !important;
+    font-size: 17.5px !important;
 }
 
 .recipe-subtitle {
-    color: rgb(68, 68, 68);
+    color: rgb(78, 135, 221) !important;
     font-weight: 500 !important;
     font-size: 25 !important;
 }
 
 .recipe-title {
-    color: rgb(78, 135, 221) !important;
+    color: rgb(10, 32, 65) !important;
     font-weight: 500 !important;
     font-size: 40px !important;
 }
 
 .recipe-page-image {
     padding-top: 25px;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .recipe-directions {
@@ -103,4 +108,8 @@ body{
 
 .recipe-time {
     font-size: 20px !important;
+}
+
+.card-text {
+    font-size: 17.5px !important;
 }
