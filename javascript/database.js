@@ -21,7 +21,7 @@ async function getToken(username, password) {
         localStorage.token = json["access_token"]
         return json["access_token"];
     } else {
-        alert('An error occurred while trying to get the token');
+        // alert('An error occurred while trying to get the token');
     }
 }
 
@@ -45,7 +45,7 @@ async function createProfile() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully created your profile!')
+        //alert('Successfully created your profile!')
         window.location = "dashboard.html";
     }
 }
@@ -66,7 +66,7 @@ async function getProfile() {
         console.log(json);
         return json;
     } else {
-        alert('An error occurred while trying to get the profile');
+        //alert('An error occurred while trying to get the profile');
     }
 }
 
@@ -88,9 +88,9 @@ async function updateProfile() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully updated the profile!')
+        //alert('Successfully updated the profile!')
     } else {
-        alert('An error occurred while trying to update the profile');
+        //alert('An error occurred while trying to update the profile');
     }
 }
 
@@ -107,9 +107,9 @@ async function deleteProfile() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully deleted the profile!')
+        //alert('Successfully deleted the profile!')
     } else {
-        alert('An error occurred while trying to delete the profile');
+        //alert('An error occurred while trying to delete the profile');
     }
 }
 
@@ -131,9 +131,9 @@ async function updateItems() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully updated items!')
+        //alert('Successfully updated items!')
     } else {
-        alert('An error occurred while trying to update the items');
+        //alert('An error occurred while trying to update the items');
     }
 }
 
@@ -151,9 +151,9 @@ async function getInventory() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully got the inventory!')
+        //alert('Successfully got the inventory!')
     } else {
-        alert('An error occurred while trying to get the inventory');
+        //alert('An error occurred while trying to get the inventory');
     }
 }
 
@@ -173,7 +173,7 @@ async function getCommunityRecipes() {
         console.log(json);
         return json;
     } else {
-        alert('An error occurred while trying to get community recipes');
+        //alert('An error occurred while trying to get community recipes');
     }
 }
 
@@ -209,9 +209,9 @@ async function postRecipes() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully posted your recipe!')
+        //alert('Successfully posted your recipe!')
     } else {
-        alert('An error occurred while trying to post your recipe');
+        //alert('An error occurred while trying to post your recipe');
     }
 }
 
@@ -231,7 +231,7 @@ async function getRecipes() {
         console.log(json);
         return json;
     } else {
-        alert('An error occurred while trying to get recipes');
+        //alert('An error occurred while trying to get recipes');
     }
 }
 
@@ -253,9 +253,9 @@ async function likeRecipes() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully liked recipes!')
+        //alert('Successfully liked recipes!')
     } else {
-        alert('An error occurred while trying to like recipes');
+        //alert('An error occurred while trying to like recipes');
     }
 }
 
@@ -278,10 +278,10 @@ async function likeRecipes() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        alert('Successfully added your recipe!')
+        //alert('Successfully added your recipe!')
     } else
     {
-        alert('An error occurred while trying to add your recipe');
+        //alert('An error occurred while trying to add your recipe');
     }
 }*/
 
@@ -297,7 +297,7 @@ async function getItemQuantity(itemName) {
         return json.itemName;
 
     } else {
-        alert('An error occurred while trying to fetch your recipe');
+        //alert('An error occurred while trying to fetch your recipe');
     }
 }
 

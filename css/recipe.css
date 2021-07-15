@@ -69,3 +69,34 @@ body{
 .recipe {
     color: black !important;
 }
+
+.recipe-owner {
+    color: grey;
+    font-weight: 400 !important;
+    font-size: 15 !important;
+}
+
+.recipe-subtitle {
+    color: rgb(68, 68, 68);
+    font-weight: 500 !important;
+    font-size: 25 !important;
+}
+
+.recipe-title {
+    color: rgb(51, 51, 51) !important;
+    font-weight: 500 !important;
+    font-size: 40px !important;
+}
+
+.recipe-page-image {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.recipe-directions {
+    font-size: 20px !important;
+}
+
+.recipe-ingredients {
+    font-size: 20px !important;
+}

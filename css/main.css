@@ -57,3 +57,27 @@ hr {
 .p {
     color: black !important;
 }
+
+.circle {
+    height: 25vh;
+    width: 25vh;
+    background-image: radial-gradient( circle farthest-corner at 50.4% 50.5%,  #5CC4F5, #CAEDFC);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+.content{
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
+    position: relative;
+    z-index: 100;
+}
