@@ -2,7 +2,8 @@ window.onload = function () {
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
             const profile = await getProfile();
-            document.getElementById("username").innerHTML = profile.username == null ? profile.email : profile.username;
+            document.getElementById("profile-username").innerHTML = localStorage.username == null ? profile.email : localStorage.username;
+            document.getElementById("pfp").src = localStorage.avatar == null ? "./res/images/avatar.png" : localStorage.avatar;
         }
     });
 };
@@ -23,13 +24,17 @@ function updateInfo() {
         //}
         //}
         if (document.getElementById("username").value.length > 0) {
-            document.getElementById("user").innerHTML = document.getElementById("username").value;
+            document.getElementById("profile-username").innerHTML = document.getElementById("username").value;
             document.getElementById("username").value = "";
+            localStorage.username = document.getElementById("profile-username").innerHTML;
         }
         if (document.getElementById("imgLink").value.length > 0) {
-            document.getElementById("pfp").src = document.getElementById("imgLink").value;
+            document.getElementById("pfp").src = document.getElementById("imgLink").value
+            console.log(document.getElementById("pfp").src);
             document.getElementById("imgLink").value = "";
+            localStorage.avatar = document.getElementById("pfp").src;
         }
+        document.getElementById("information").remove();
     } else {
         editProfile();
     }

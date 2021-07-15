@@ -12,6 +12,7 @@ function signUp() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
+        localStorage.username = document.getElementById("username").value;
         signedUp = true;
         user = userCredential.user;
         getToken(email, password).then(res => {
