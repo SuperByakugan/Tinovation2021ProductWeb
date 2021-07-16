@@ -209,7 +209,7 @@ async function postRecipes() {
     if (res.ok) {
         let json = await res.json();
         console.log(json);
-        //alert('Successfully posted your recipe!')
+        alert('Successfully created your recipe!')
     } else {
         //alert('An error occurred while trying to post your recipe');
     }
