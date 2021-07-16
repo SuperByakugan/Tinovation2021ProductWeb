@@ -3,7 +3,7 @@ window.onload = function () {
         if (user) {
             const profile = await getProfile();
             document.getElementById("profile-username").innerHTML = localStorage.username == null ? profile.email : localStorage.username;
-            document.getElementById("pfp").src = localStorage.avatar == null ? "./res/images/avatar.png" : localStorage.avatar;
+            document.getElementById("pfp").src = localStorage.avatar == null || localStorage.avatar == undefined || localStorage == undefined ? './res/images/avatar.png' : localStorage.avatar;
         }
     });
 };
