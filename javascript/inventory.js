@@ -12,6 +12,10 @@ async function addItem() {
 
 async function minus(id) {
     var newer = id.parentElement.parentElement.parentElement;
+    if(parseInt(newer.querySelector("#item-quantity").innerHTML) - 1 == 0)
+    {
+        newer.parentElement.parentElement.remove();
+    }
     newer.querySelector("#item-quantity").innerHTML = parseInt(newer.querySelector("#item-quantity").innerHTML) - 1;
     console.log(id.parentElement.parentElement.parentElement);
 }
